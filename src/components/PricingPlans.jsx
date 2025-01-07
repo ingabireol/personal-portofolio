@@ -2,7 +2,7 @@ import { checkIcon, pricingPlans } from '@/assets'
 import Heading from './sub/Heading'
 const PricingPlans = () => {
     return (
-        <div className='py-20 px-48'>
+        <div className='py-20 px-48' id='pricing'>
             <Heading text={'Pricing Plans'} />
             <div
                 className='h-full flex lg:flex-col items-center justify-between gap-8'

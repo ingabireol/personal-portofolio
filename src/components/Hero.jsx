@@ -35,6 +35,7 @@ import { useState } from "react"
   return (
     
     <div 
+      id="home"
       className="h-screen flex flex-col items-center justify-center gap-2 py-10" 
       onMouseMove={handleMouseMove} 
       onMouseEnter={handleMouseEnter}>

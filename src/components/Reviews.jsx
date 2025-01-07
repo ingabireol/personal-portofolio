@@ -37,7 +37,7 @@ const Reviews = () => {
     },[index])
     // const 
     return (
-        <div className="my-20 px-52">
+        <div className="my-20 px-52" id="reviews">
             <Heading />
             <div className="flex flex-col items-center justify-center">
                 <motion.div className="relative w-[800px] lg:w-[600px] md:w-[95%] sm:w-[280px] h-[500px] lg:h-[450px] md:h-[400px] sm:h-[600px] flex items-center justify-center overflow-hidden"

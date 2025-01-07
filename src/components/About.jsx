@@ -7,7 +7,7 @@ import Heading from "./sub/Heading"
 
 const About = () => {
   return (
-    <div className="min-h-screen px-52 flex flex-col items-center justify-center py-10">
+    <div className="min-h-screen px-52 flex flex-col items-center justify-center py-10" id="about">
         <Heading text={'About Me'}/>
         <div className="w-full flex items-center justify-between md:justify-center">
             <Image src={'/Assets/about-me.png'}
