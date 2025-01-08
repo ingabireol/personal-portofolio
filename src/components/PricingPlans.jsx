@@ -2,15 +2,15 @@ import { checkIcon, pricingPlans } from '@/assets'
 import Heading from './sub/Heading'
 const PricingPlans = () => {
     return (
-        <div className='py-20 px-48' id='pricing'>
+        <div className='py-20' id='pricing'>
             <Heading text={'Pricing Plans'} />
             <div
                 className='h-full flex lg:flex-col items-center justify-between gap-8'
             >
                 {pricingPlans.map((plan, index) => (
                     <div key={index}
-                        className={`sm:w-[250px] bg-zinc-50 flex flex-col gap-6 p-6 border border-red-400 rounded-xl text-gray-600
-            ${index === 1 ? 'w-[320px] xl:w-[280px] bg-white' : 'w-[270px] xl:w-[250px]'} hover:scale-105 transition-all`}
+                        className={`sm:w-[250px] bg-zinc-50  dark:bg-zinc-700 flex flex-col gap-6 p-6 border border-red-400 rounded-xl text-gray-600 dark:text-gray-200 transition-colors
+            ${index === 1 ? 'w-[320px] xl:w-[280px] bg-white dark:bg-zinc-700 transition-colors' : 'w-[270px] xl:w-[250px]'} hover:scale-105 transition-all`}
                        /*  initial={{ y: 200, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         whileHover={{ scale: 1.05 }}

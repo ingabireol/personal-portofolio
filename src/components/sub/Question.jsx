@@ -27,7 +27,7 @@ const Question = ({question,index}) => {
         initial="hidden"
         whileInView="visible"
         >
-        <h1 className={`flex items-center text-xl font-extralight text-yellow-600 tracking-wide cursor-pointer hover:text-yellow-500 ${show ? 'border-b border-gray-100 text-yellow-500 ':'text-gray-700'}`}>
+        <h1 className={`flex items-center text-xl font-extralight tracking-wide cursor-pointer hover:text-yellow-500 ${show ? 'border-b border-gray-100 text-yellow-500 ':'text-gray-700 dark:text-gray-300'}`}>
         <motion.span
             animate={{
                 rotate: show ? 180: 0,
@@ -37,7 +37,7 @@ const Question = ({question,index}) => {
         <span>{question.question}</span>
         </h1>
       <motion.p
-        className="box-border origin-top pl-8 text-lg font-extralight tracking-wide text-gray-900 first-letter:pl-3"
+        className="box-border origin-top pl-8 text-lg font-extralight tracking-wide text-gray-900 dark:text-gray-200 first-letter:pl-3"
         animate={{
             opacity: show ? 1: 0,
             height: show ? 'auto' : 0,

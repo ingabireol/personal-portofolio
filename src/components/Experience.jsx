@@ -1,7 +1,7 @@
 'use client'
 
 import { arrowLeftIcon, experienceData } from "@/assets"
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import Image from "next/image"
 import { useRef } from "react"
 import Heading from "./sub/Heading"
@@ -14,17 +14,17 @@ const Experience = () => {
         target: containerRef,
         offset: ['start 95%', 'end end'],
     })
-    const springScrollY = useSpring(scrollYProgress, { damping: 5, stiffness: 2, })
+    // const springScrollY = useSpring(scrollYProgress, { damping: 5, stiffness: 2, })
 
     return (
-        <div className="relative py-20 px-52" id="experience">
+        <div className="relative py-20 mt-20" id="experience">
             <Heading text={'Experience & Education'} />
             <Image
                 src={'/Assets/education.png'}
                 alt="Experience Image"
                 width={400}
                 height={400}
-                className="absolute -top-4 right-40 opacity-70 lg:hidden"
+                className="absolute -top-4 right-0 opacity-70 lg:hidden"
             />
             <div ref={containerRef} className="w-full h-full flex flex-col items-center justify-center gap-y-10 lg:gap-y-20 py-10">
                 {experienceData.map((data, i) => (
@@ -37,13 +37,13 @@ const Experience = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, stiffness: 50, type: 'spring' }}
                     >
-                        <div className="relative flex flex-col gap-y-3 rounded-md border border-red-300 bg-white p-4 tracking-wide sm:text-sm">
-                            <h1 className="text-xl sm:text-lg font-light text-gray-700">{data.title}</h1>
-                            <p className="text-gray-800">
+                        <div className="relative flex flex-col gap-y-3 rounded-md border border-red-300 dark:bg-zinc-700 bg-white transition-colors p-4 tracking-wide sm:text-sm">
+                            <h1 className="text-xl sm:text-lg font-light text-gray-700 dark:text-gray-200">{data.title}</h1>
+                            <p className="text-gray-800 dark:text-gray-200">
                                 <span className="block font-light">Education</span>
                                 <span className="block pl-2 font-extralight">{data.education}</span>
                             </p>
-                            <div className="text-gray-800">
+                            <div className="text-gray-800 dark:text-gray-200">
                                 <span className="font-light">Experience: </span>
                                 <ul className="pl-2">
                                     {data.experience.map((exp, j) => (
@@ -59,7 +59,7 @@ const Experience = () => {
                 <motion.div
                     className="absolute w-1 h-full rounded-full bg-gray-300 origin-top"
                     initial={{ scaleY: 0 }}
-                    style={{ scaleY: springScrollY }}
+                    style={{ scaleY: scrollYProgress }}
                 ></motion.div>
             </div>
         </div>

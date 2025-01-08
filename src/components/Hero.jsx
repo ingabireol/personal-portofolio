@@ -48,14 +48,22 @@ import { useState } from "react"
         }}
 
       >
-          <Image src={'/Assets/person.png'}
+        <motion.div
+          initial={{opacity: 0,y: -100}}
+          animate={{
+            opacity: 1,y: 0,
+          }}
+          transition={{delay: .5}}
+        >
+        <Image src={'/Assets/person.png'}
             width={300}
             height={300}
             alt="Profile Picture"
             priority="true"
             className="h-auto w-[150px]"
           />
-          <motion.span 
+        </motion.div>
+          <motion.span
             className="absolute top-[20%] left-[50%] font-light text-white"
             initial={{scale: 0}}
             animate={{opacity: buttonHover ? 0: 1,
@@ -66,11 +74,18 @@ import { useState } from "react"
             >Hi</motion.span>
       </motion.div>
       <div className="flex flex-col gap-5">
-        <h1 className="text-3xl sm:text-2xl font-bold tracking-wide text-gray-500 capitalize">My Name is Ingabire Olivier &</h1>
-        <p className="text-lg text-gray-400 text-center tracking-wider capitalize">I like Creativity 🙄</p>
+        <h1 className="text-3xl sm:text-2xl font-bold tracking-wide text-gray-500 capitalize dark:text-white transition-colors">My Name is Ingabire Olivier &</h1>
+        <p className="text-lg text-gray-400 text-center tracking-wider capitalize dark:text-white transition-colors">I like Creativity 🙄</p>
         <div className="flex items-center mx-auto gap-x-4 text-3xl text-yellow-600 justify-center sm:text-2xl">
           {heroIcons.map((icon,i) =>(
-            <a href="#" key={icon.key} className="hover:bg-red-400 rounded-lg transition-colors hover:text-white">{icon}</a>
+            <motion.a href="#" key={icon.key} 
+              className="hover:bg-red-400 rounded-lg transition-colors hover:text-white"
+              initial={{opacity: 0, x:100}}
+              animate={{opacity: 1, x: 0}}
+              transition={{delay:  0.1 * i}}
+            >
+                {icon}
+            </motion.a>
           ))}
         </div>
         <button 

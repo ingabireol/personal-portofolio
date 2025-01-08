@@ -5,7 +5,7 @@ import { useState } from 'react'
 const Project = ({data,index}) => {
     const [show,setShow] = useState(false)
     return (
-    <motion.div 
+    <motion.div
         className='relative w-[350px] sm:w-full h-max border border-yellow-400 rounded-lg cursor-pointer'
         initial={{opacity: 0,y: index % 2===0 ? 100 : -100}}
         whileInView={{opacity: 1,y:0}}
@@ -19,15 +19,15 @@ const Project = ({data,index}) => {
         className='rounded-lg opacity-70'
         />
         <motion.div 
-            className='absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 bg-white/95 p-6 rounded-lg' 
+            className='absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 dark:bg-zinc-700/95 transition-colors bg-white/95 p-6 rounded-lg' 
             initial={{opacity: 0}}
             animate={{opacity: show ? 1 : 0}}
             onClick={()=>{
                 setShow(!show)
             }}
             >
-        <h2 className="text-lg font-bold tracking-wide text-gray-500">{data.name}</h2>
-        <p className='text-justify text-gray-500 first-letter:pl-2'>{data.desc}</p>
+        <h2 className="text-lg font-bold tracking-wide dark:text-gray-300 text-gray-500 transition-colors">{data.name}</h2>
+        <p className='text-justify text-gray-500 dark:text-gray-200 first-letter:pl-2 transition-colors'>{data.desc}</p>
         </motion.div>
     </motion.div>
   )
